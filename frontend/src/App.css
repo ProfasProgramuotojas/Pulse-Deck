@@ -1,0 +1,19 @@
+.comment-card {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: beige;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    overflow-wrap: break-word;
+}
+
+.comment-product{
+    font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
