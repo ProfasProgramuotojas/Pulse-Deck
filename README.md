@@ -28,7 +28,8 @@ cd Pulse-Deck
 2. The Hugging Face token is read from the `HF_TOKEN` environment variable (referenced in `application.properties` as `huggingface.api.token=${HF_TOKEN}`). Set it before running the backend:
 
 ```
-export HF_TOKEN=hf_your_token_here
+Mac/Linux: export HF_TOKEN=hf_your_token_here
+Windows: set HF_TOKEN=hf_your_token_here
 ```
 
 No other file modifications are required for local development.
@@ -40,7 +41,6 @@ The backend and frontend run as two separate dev servers.
 1. Start the backend from the project root (the API serves on `http://localhost:8080`):
 
 ```
-export HF_TOKEN=hf_your_token_here
 ./mvnw spring-boot:run
 ```
 
