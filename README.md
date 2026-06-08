@@ -25,11 +25,23 @@ git clone git@github.com:ProfasProgramuotojas/Pulse-Deck.git
 cd Pulse-Deck
 ```
 
-2. The Hugging Face token is read from the `HF_TOKEN` environment variable (referenced in `application.properties` as `huggingface.api.token=${HF_TOKEN}`). Set it before running the backend:
+2. Set your Hugging Face token.
 
+The backend reads the token from the `HF_TOKEN` environment variable (referenced in `application.properties` as `huggingface.api.token=${HF_TOKEN}`). Set it in the **same terminal session** you'll use to run the backend - by default the variable only lives for that session.
+
+**Linux / macOS (bash, zsh):**
+```bash
+export HF_TOKEN=hf_your_token_here
 ```
-Mac/Linux: export HF_TOKEN=hf_your_token_here
-Windows: set HF_TOKEN=hf_your_token_here
+
+**Windows - Command Prompt (cmd):**
+```bat
+set HF_TOKEN=hf_your_token_here
+```
+
+**Windows - PowerShell:**
+```powershell
+$env:HF_TOKEN = "hf_your_token_here"
 ```
 
 No other file modifications are required for local development.
@@ -38,13 +50,24 @@ No other file modifications are required for local development.
 
 The backend and frontend run as two separate dev servers.
 
-1. Start the backend from the project root (the API serves on `http://localhost:8080`):
+1. Start the backend from the project root (the API serves on `http://localhost:8080`). Make sure `HF_TOKEN` is set in this terminal first (see above), then run the Maven wrapper for your shell:
 
-```
+**Linux / macOS:**
+```bash
 ./mvnw spring-boot:run
 ```
 
-2. In a second terminal, start the frontend from the `frontend/` directory (the UI serves on `http://localhost:5173`):
+**Windows - Command Prompt (cmd):**
+```bat
+mvnw.cmd spring-boot:run
+```
+
+**Windows - PowerShell:**
+```powershell
+.\mvnw.cmd spring-boot:run
+```
+
+2. In a second terminal, start the frontend from the `frontend/` directory (the UI serves on `http://localhost:5173`). Same on every platform:
 
 ```
 cd frontend
