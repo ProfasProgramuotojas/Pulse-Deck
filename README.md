@@ -31,7 +31,7 @@ cd Pulse-Deck
 export HF_TOKEN=hf_your_token_here
 ```
 
-No other file modifications are required for local development. Key settings in`src/main/resources/application.properties`
+No other file modifications are required for local development.
 
 ### Executing program
 
