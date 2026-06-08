@@ -17,7 +17,7 @@ public class Ticket {
     private String title;
     private String category;
     private String priority;
-    private String description;
+    private String summary;
 
     public Long getTicketId() {
         return ticketId;
@@ -59,11 +59,11 @@ public class Ticket {
         this.priority = priority;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSummary() {
+        return summary;
     }
 }

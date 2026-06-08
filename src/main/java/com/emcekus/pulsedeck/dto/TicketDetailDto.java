@@ -8,7 +8,7 @@ public class TicketDetailDto {
     public String title;
     public String category;
     public String priority;
-    public String description;
+    public String summary;
     public Long commentId;
     public String product;
     public String comment;
@@ -19,7 +19,7 @@ public class TicketDetailDto {
         dto.title = ticket.getTitle();
         dto.category = ticket.getCategory();
         dto.priority = ticket.getPriority();
-        dto.description = ticket.getDescription();
+        dto.summary = ticket.getSummary();
 
         Comment c = ticket.getComment();
         if (c != null) {

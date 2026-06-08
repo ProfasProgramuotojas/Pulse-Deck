@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/comments")
-@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/comment")
+@CrossOrigin(origins = "${app.client.url}")
 public class CommentController {
 
     private final CommentRepository commentRepository;
@@ -38,14 +38,9 @@ public class CommentController {
             ticket.setTitle(analysis.title);
             ticket.setCategory(analysis.category);
             ticket.setPriority(analysis.priority);
-            ticket.setDescription(analysis.summary);
+            ticket.setSummary(analysis.summary);
             ticketRepository.save(ticket);
         }
         return analysis;
-    }
-
-    @GetMapping
-    public List<Comment> all() {
-        return commentRepository.findAll();
     }
 }

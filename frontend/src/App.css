@@ -1,19 +1,41 @@
-.comment-card {
+.comment-card, .ticket-card{
     border-radius: 10px;
     padding: 5px;
-    background-color: beige;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    width: 300px;
     overflow-wrap: break-word;
 }
 
+.comment-card {
+    background-color: aliceblue;
+}
+.ticket-card {
+    background-color: thistle;
+}
+.ticket-card:hover {
+    cursor: pointer;
+}
 .comment-product{
     font-weight: bold;
 }
 
 form{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-grid, .ticket-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.ticket-page {
+    display: flex;
+
+}
+
+.home-page{
     display: flex;
     flex-direction: column;
 }

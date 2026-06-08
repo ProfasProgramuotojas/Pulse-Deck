@@ -37,43 +37,46 @@ const Home = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch("http://localhost:8080/comments", {
+        const res = await fetch("http://localhost:8080/comment", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({product: product, comment: comment})
-
         });
-        const saved = await res.json();
-        console.log("saved:", saved);
+        if (res) document.location.href = "/comments";
     }
 
-    return <div>
-        <form ref={formRef} onSubmit={handleSubmit}>
-            <div>
-                <label> Product</label>
-                <select onChange={(e) => {
-                    setProduct(e.target.value)
-                }}>
-                    <option>Fill Product</option>
-                    {preDefinedProducts.map((product) => (<option key={product} value={product}>{product}</option>))}
-                </select>
-            </div>
+    return (
+        <div className={"home-page"}>
+            <h1>Create Comment</h1>
+            <form ref={formRef} onSubmit={handleSubmit}>
+                <div>
+                    <label> Product</label>
+                    <select onChange={(e) => {
+                        setProduct(e.target.value)
+                    }}>
+                        <option>Fill Product</option>
+                        {preDefinedProducts.map((product) => (
+                            <option key={product} value={product}>{product}</option>))}
+                    </select>
+                </div>
 
-            <input value={product} onChange={(e) => setProduct(e.target.value)}/>
-            <div>
-                <label> Comment</label>
-                <select onChange={(e) => {
-                    setComment(e.target.value)
-                }}>
-                    <option>Fill Comment</option>
-                    {preDefinedComments.map((comment) => (<option key={comment} value={comment}>{comment}</option>))}
-                </select>
-            </div>
-            <input value={comment} onChange={(e) => setComment(e.target.value)}/>
-            <button type={"submit"}>Submit</button>
-        </form>
-
-    </div>
+                <input value={product} onChange={(e) => setProduct(e.target.value)}/>
+                <div>
+                    <label> Comment</label>
+                    <select onChange={(e) => {
+                        setComment(e.target.value)
+                    }}>
+                        <option>Fill Comment</option>
+                        {preDefinedComments.map((comment) => (
+                            <option key={comment} value={comment}>{comment}</option>))}
+                    </select>
+                </div>
+                <input value={comment} onChange={(e) => setComment(e.target.value)}/>
+                <button type={"submit"}>Submit</button>
+            </form>
+            <a href={"/comments"}>All Comment</a>
+            <a href={"/tickets"}>All Tickets</a>
+        </div>)
 }
 
 export default Home
